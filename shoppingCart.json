@@ -38,7 +38,7 @@
 						"required": false,
 						"type": "string",
 						"format": "string"
-					}//,
+					}
 					//{
 						//"name": "testing",
 						//"in": "header",
