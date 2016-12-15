@@ -39,6 +39,14 @@
 						"type": "string",
 						"format": "string"
 					},
+ 					{
+ 						"name": "testing",
+ 						"in": "header",
+ 						"description": "API test",
+ 						"required": true,
+ 						"type": "string",
+ 						"format": "string"
+  					}
 				],
 				"responses": {
 					"200": {
