@@ -1,0 +1,72 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "Testing my API's in swagger",
+		"version": "1.0.0",
+		"title": "Shopping Cart"
+	},
+	"host": "localhost",
+	"basePath": "/myCart",
+	"schemes": [
+		"http"
+	],
+	"produces": [
+		"application/json"
+	],
+	"paths": {
+		"/all": {
+			"get": {
+				"tags": [
+					"Records"
+				],
+				"summary": "Shopping",
+				"description": "Shopping cart testing",
+				"operationId": "allGET",
+				"parameters": [
+					{
+						"name": "key",
+						"in": "header",
+						"description": "API key",
+						"required": false,
+						"type": "string",
+						"format": "string"
+					},
+					{
+						"name": "soajsauth",
+						"in": "header",
+						"description": "API auth",
+						"required": false,
+						"type": "string",
+						"format": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "An array of records",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Record"
+							}
+						}
+					},
+					"default": {
+						"description": "Unexpected error",
+						"schema": {
+							"$ref": "#/definitions/Error"
+						}
+					}
+				},
+				"x-swagger-router-controller": "Products"
+			}
+		}
+	},
+	"definitions": {
+		"Record": {
+			"type": "object"
+		},
+		"Error": {
+			"type": "object"
+		}
+	}
+}
