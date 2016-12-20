@@ -1,0 +1,49 @@
+swagger: "2.0"
+info:
+  description: "Move your app forward with the Uber API"
+  version: "1.0.0"
+  title: "Uber API"
+host: "localhost"
+basePath: "/myCart"
+schemes:
+- "http"
+produces:
+- "application/json"
+paths:
+  /all:
+    get:
+      tags:
+      - "Products"
+      summary: "Product Types"
+      description: "The Products endpoint returns information about the *Uber* products offered at a given location. The response includes the display name nand other details about each product, and lists the products in the\nproper display order."
+      operationId: "allGET"
+      parameters:
+      - name: "key"
+        in: "header"
+        description: "API key"
+        required: false
+        type: "string"
+        format: "string"
+      - name: "soajsauth"
+        in: "header"
+        description: "API auth"
+        required: false
+        type: "string"
+        format: "string"
+      responses:
+        200:
+          description: "An array of products"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Product"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Products"
+definitions:
+  Product:
+    type: "object"
+  Error:
+    type: "object"
