@@ -1,0 +1,24 @@
+swagger: '2.0'
+info:
+  version: "0.0.1"
+  title: IMFV test
+paths:
+  /:
+    get:
+      parameters:
+        - name: height
+          in: query
+          description: table height
+          required: true
+          type: number
+          format: double
+      responses:
+        200:
+          description: ok
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              id:
+                type: number
