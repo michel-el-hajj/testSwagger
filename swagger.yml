@@ -58,6 +58,11 @@ paths:
                 type: array
                 items:
                   $ref: '#/definitions/item'
+        - name: test
+          in: body
+          required: true
+          description: testing a second field in the body
+          type: string
         - name: key
           in: header
           description: API key
